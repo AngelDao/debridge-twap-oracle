@@ -64,6 +64,6 @@ library BlockVerifier {
 
 			stateRoot := mload(stateRootPointer)
 			blockTimestamp := shr(sub(256, mul(timestampLength, 8)), mload(timestampPointer))
-		
+		}
 	}
 }
