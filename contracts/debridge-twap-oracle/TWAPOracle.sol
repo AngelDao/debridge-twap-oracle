@@ -17,7 +17,7 @@ contract TWAPOracle is BridgeAppBase {
         __BridgeAppBase_init(_deBridgeGate);
     }
 
-    function getV2TWAP(
+    function getV3TWAP(
         IUniswapV3Pool _pool,
         uint32 _twapDuration,
         uint256 _chainIdTo,
