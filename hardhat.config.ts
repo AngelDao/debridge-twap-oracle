@@ -36,8 +36,8 @@ const config: HardhatUserConfig = {
     ]
   },
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
+    matic: {
+      url: "https://polygon-rpc.com/",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
