@@ -44,7 +44,7 @@ const main = async () => {
     const {submissionId} = sentLogDescription.args;
 
     console.log(`Submission id: ${submissionId}`);
-    console.log(`Url: https://testnet.debridge.finance/transaction?tx=${tx.hash}&chainId=${FROM_CHAIN_ID}`);
+    console.log(`Url: https://app.debridge.finance/transaction?tx=${tx.hash}&chainId=${FROM_CHAIN_ID}`);
 
 }
 

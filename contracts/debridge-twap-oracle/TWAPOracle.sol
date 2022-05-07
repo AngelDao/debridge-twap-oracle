@@ -38,7 +38,7 @@ contract TWAPOracle is BridgeAppBase {
         autoParams.flags = autoParams.flags.setFlag(Flags.PROXY_WITH_SENDER, true);
         autoParams.executionFee = _executionFee;
         autoParams.fallbackAddress = abi.encodePacked(_fallback);
-        autoParams.data = abi.encodeWithSignature("onBridgedMessage(address _pool, uint256 _price)", _pool, price);
+        autoParams.data = abi.encodeWithSignature("onBridgedMessage(address _pool, int24 _price)", _pool, price);
 
         address contractAddressTo = chainIdToContractAddress[_chainIdTo];
         if (contractAddressTo == address(0)) {
