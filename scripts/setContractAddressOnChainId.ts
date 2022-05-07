@@ -1,19 +1,17 @@
-import {Incrementor} from "../../../typechain-types";
+import {TWAPOracle} from "../typechain";
 import {
-    abi as IncrementorAbi
-} from "../../../artifacts/contracts/examples/Incrementor.sol/Incrementor.json";
+    abi as TWAPOracleAbi
+} from "./../artifacts/contracts/debridge-twap-oracle/TWAPOracle.sol/TWAPOracle.json";
 import {Contract, Wallet} from "ethers";
 import assert from "assert";
-import {ethers, getChainId} from "hardhat";
-import {FROM_CHAIN_ID, INCREMENTOR_ADDRESS_ON_FROM, INCREMENTOR_ADDRESS_ON_TO, TO_CHAIN_ID} from "./constants";
+import {ethers} from "hardhat";
+import {FROM_CHAIN_ID, ADDRESS_ON_FROM, ADDRESS_ON_TO, TO_CHAIN_ID} from "./constants";
 
 const main = async () => {
-    assert(await getChainId() === FROM_CHAIN_ID.toString(), `Must be called from chain 'from' (${FROM_CHAIN_ID}), but got ${await getChainId()}`);
+    const signer = new Wallet(process.env.PRIVATE_KEY as string, ethers.provider);
 
-    const signer = new Wallet(process.env.DEPLOYER_PRIVATE_KEY as string, ethers.provider);
-
-    const incrementorSender = new Contract(INCREMENTOR_ADDRESS_ON_FROM, IncrementorAbi, signer) as Incrementor;
-    await incrementorSender.setContractAddressOnChainId(INCREMENTOR_ADDRESS_ON_TO, TO_CHAIN_ID);
+    const contractSender = new Contract(ADDRESS_ON_FROM, TWAPOracleAbi, signer) as TWAPOracle;
+    await contractSender.setContractAddressOnChainId(ADDRESS_ON_TO, TO_CHAIN_ID, {gasLimit: 29000000, gasPrice: 300 * 1000000000});
 }
 
 main()

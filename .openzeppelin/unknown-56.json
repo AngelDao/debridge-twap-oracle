@@ -2,34 +2,24 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0x94946B4e5E9147e88F9a1c3Bb1555D4cc148bB86",
-    "txHash": "0xa5167a507e4aafe62e0c5992868833121a89a46e75a449c33169ba30e4286a1f"
+    "txHash": "0xd4a619082083fcb14267d525f61d0d39f9a8f6df2bdc66adc04f217b7eccb29a"
   },
   "proxies": [
     {
       "address": "0xE57682F09E9c01c25cf2c0b24114bd364c82a2cC",
-      "txHash": "0xec4e442ae628193dc661dc193dba21ea6c726a7d9ee311c192543cfc482210d8",
+      "txHash": "0xa16c678a4127160a55013fd9f0f59a0728144f722bfb31a30e3b67d73579e686",
       "kind": "transparent"
     },
     {
-      "address": "0x6db2c8412B825FeeCA5861F04991D04EDc219F53",
-      "txHash": "0x5e6c5dcd72bff11ea01f55d9b33804b928e56f3bdc226d38baa1538d1f4fea6b",
-      "kind": "transparent"
-    },
-    {
-      "address": "0xBB95Ed61649C62C67260B79A17d865c1C2c12764",
-      "txHash": "0x525887d5ea3c232726e3184d2e3ede1ae6af85add4d14c961ca123b074c00963",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x51487Af4A13a60188EE47595023Cc42Ba943F2F7",
-      "txHash": "0x42f18b6a48ccf9b1b1d56e5df99503397ae6ef2ef3bb483bc1c02fc88c577954",
+      "address": "0x423913626649997532712e129277CF152c642e39",
+      "txHash": "0xd1a2129ea6d0a1d13cdc3cce97b632942ff91934fffb14893c95141d595bc721",
       "kind": "transparent"
     }
   ],
   "impls": {
     "249f5b3e715c1e652deed073c625d952e0eecd93a5af92c3cdc7af03cd513e22": {
       "address": "0x70CAA501FF9BbF63634BD208E31092042d7AFA0E",
-      "txHash": "0x7ef05893700433cf253fc213129f528adab39d9c7f8b0e32896c9bb7794fc2b3",
+      "txHash": "0x5ba3d54f7bf999882afae0eb896d2f0bb917f1a341b6c5c6563e0b0722bf9d15",
       "layout": {
         "storage": [
           {
@@ -100,7 +90,7 @@
             "label": "deBridgeGate",
             "offset": 0,
             "slot": "201",
-            "type": "t_contract(IDeBridgeGate)2460",
+            "type": "t_contract(IDeBridgeGate)2616",
             "contract": "BridgeAppBase",
             "src": "contracts/debridge-twap-oracle/BridgeAppBase.sol:17"
           },
@@ -146,7 +136,7 @@
             "label": "bytes",
             "numberOfBytes": "32"
           },
-          "t_contract(IDeBridgeGate)2460": {
+          "t_contract(IDeBridgeGate)2616": {
             "label": "contract IDeBridgeGate",
             "numberOfBytes": "20"
           },
