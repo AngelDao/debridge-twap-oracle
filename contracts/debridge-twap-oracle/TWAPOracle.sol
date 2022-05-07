@@ -45,9 +45,9 @@ contract TWAPOracle is BridgeAppBase {
             revert ChainToIsNotSupported();
         }
 
-        deBridgeGate.send(
+        deBridgeGate.send{value: msg.value}(
             address(0),
-            0, // not sending any funds
+            msg.value,
             _chainIdTo,
             abi.encodePacked(contractAddressTo),
             "",

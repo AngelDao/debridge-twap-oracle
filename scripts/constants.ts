@@ -1,5 +1,5 @@
 const polygonChainId = 137;
-const bscChainId = 97;
+const bscChainId = 56;
 
 
 export const FROM_CHAIN_ID = polygonChainId;
@@ -7,5 +7,5 @@ export const TO_CHAIN_ID = bscChainId;
 export const DE_BRIDGE_GATE_ADDRESS = '0x43dE2d77BF8027e25dBD179B491e8d64f38398aA'; // same address for all the current chains
 
 // Set after deploy
-export const ADDRESS_ON_FROM = '0xc4FE0dc6B0E7B3BfA6346D1E843377075E2C187B';
-export const ADDRESS_ON_TO = '0xBB95Ed61649C62C67260B79A17d865c1C2c12764'
+export const ADDRESS_ON_FROM = '0xF5516573f7bd9FceeaAD0dEB3E52F97A5e10a35F';
+export const ADDRESS_ON_TO = '0xc5D791d55Ef350342ccc85EB3345F814C645bfEB'
