@@ -20,7 +20,7 @@ const main = async () => {
 
     const contractSender = new Contract(ADDRESS_ON_FROM, TWAPOracleAbi, signer) as TWAPOracle;
 
-    const executionFee = parseEther('0.5');
+    const executionFee = parseEther('2');
 
     const pool = "0x45dda9cb7c25131df268515131f647d726f50608";
 
@@ -29,8 +29,8 @@ const main = async () => {
     const tx = await contractSender.getV3TWAP(pool, twapDuration, TO_CHAIN_ID, signer.address, executionFee, {
         // executionFee + commissions + a little more
         // ~0,1% + 0.01
-        value: parseEther('1'),
-        gasLimit: 29000000, 
+        value: parseEther('3'),
+        gasLimit: 2900000, //0
         gasPrice: 300 * 1000000000
     });
 
