@@ -40,7 +40,7 @@ const config: HardhatUserConfig = {
       url: "https://polygon-rpc.com/",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gas: 29000000, 
+      gas: 20000000, 
       gasPrice: 300 * 1000000000
     },
     bsc:{
@@ -54,7 +54,8 @@ const config: HardhatUserConfig = {
     currency: "USD",
   },
   etherscan: {
-    apiKey:  process.env.BSCSCAN_API_KEY, //process.env.ETHERSCAN_API_KEY,
+    apiKey:  process.env.BSCSCAN_API_KEY, // BSC
+    //apiKey:  process.env.ETHERSCAN_API_KEY, // Polygon
   },
 };
 

@@ -11,7 +11,7 @@ const main = async () => {
     const signer = new Wallet(process.env.PRIVATE_KEY as string, ethers.provider);
 
     const contractSender = new Contract(ADDRESS_ON_FROM, TWAPOracleAbi, signer) as TWAPOracle;
-    await contractSender.setContractAddressOnChainId(ADDRESS_ON_TO, TO_CHAIN_ID, {gasLimit: 29000000, gasPrice: 300 * 1000000000});
+    await contractSender.setContractAddressOnChainId(ADDRESS_ON_TO, TO_CHAIN_ID, {gasLimit: 20000000, gasPrice: 300 * 1000000000});
 }
 
 main()
