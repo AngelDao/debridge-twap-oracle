@@ -2,19 +2,34 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0xaee44f10036688eee01d37292e2efc9e037986b364fd53eee47dcf7dbef3d7d7"
+    "txHash": "0xd4eb790d48f8d22ee0bd260a9174042740d5e6e514fd87e500f2939ec5ced927"
   },
   "proxies": [
     {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "txHash": "0x129ac9d6e2cf0c99551e4133326c3b12bb490e241896e013ae87044864086cb2",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "txHash": "0xf8d7af404d1e26c6e400ff1ddc1873c97d3230f50f74eb7e161bc095353b5067",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "txHash": "0x29f98aa4298e1049160ba1639b9c465fa018c8cb6a847308ad6314431b4b7984",
+      "kind": "transparent"
+    },
+    {
       "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0xe3d83daba90cead4f930b40795bcd8bcd09f6f3e4d89533cb99304b9bba350ff",
+      "txHash": "0xb89d8c2cc570b216c6f451a7f4450a2b40c37c6d6f1987e3f910f3c4137bcba2",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "510a382afe2fa5e1ce29fbdd73188725b7696919944755d45553ec07deb46d31": {
+    "249f5b3e715c1e652deed073c625d952e0eecd93a5af92c3cdc7af03cd513e22": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0xbc850d0d34f839434c7b5f39d33394444ac8275d838bb79dcc49a238ed21431e",
+      "txHash": "0xc5bbc5056a748d9c1df3360673040fdb8dbd89f38aaa9c0162016a42bffdba89",
       "layout": {
         "storage": [
           {
@@ -85,7 +100,7 @@
             "label": "deBridgeGate",
             "offset": 0,
             "slot": "201",
-            "type": "t_contract(IDeBridgeGate)2085",
+            "type": "t_contract(IDeBridgeGate)2460",
             "contract": "BridgeAppBase",
             "src": "contracts/debridge-twap-oracle/BridgeAppBase.sol:17"
           },
@@ -104,68 +119,78 @@
             "type": "t_mapping(t_uint256,t_address)",
             "contract": "BridgeAppBase",
             "src": "contracts/debridge-twap-oracle/BridgeAppBase.sol:26"
-          },
-          {
-            "label": "claimedTimes",
-            "offset": 0,
-            "slot": "204",
-            "type": "t_uint256",
-            "contract": "Incrementor",
-            "src": "contracts/debridge-twap-oracle/Incrementor.sol:9"
           }
         ],
         "types": {
           "t_address": {
-            "label": "address"
+            "label": "address",
+            "numberOfBytes": "20"
           },
           "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]"
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
           },
           "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]"
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
           },
           "t_bool": {
-            "label": "bool"
+            "label": "bool",
+            "numberOfBytes": "1"
           },
           "t_bytes32": {
-            "label": "bytes32"
+            "label": "bytes32",
+            "numberOfBytes": "32"
           },
           "t_bytes_memory_ptr": {
-            "label": "bytes"
+            "label": "bytes",
+            "numberOfBytes": "32"
           },
-          "t_contract(IDeBridgeGate)2085": {
-            "label": "contract IDeBridgeGate"
+          "t_contract(IDeBridgeGate)2460": {
+            "label": "contract IDeBridgeGate",
+            "numberOfBytes": "20"
           },
           "t_mapping(t_address,t_bool)": {
-            "label": "mapping(address => bool)"
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
           },
           "t_mapping(t_bytes32,t_struct(RoleData)34_storage)": {
-            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)"
+            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)",
+            "numberOfBytes": "32"
           },
           "t_mapping(t_bytes_memory_ptr,t_bool)": {
-            "label": "mapping(bytes => bool)"
+            "label": "mapping(bytes => bool)",
+            "numberOfBytes": "32"
           },
           "t_mapping(t_uint256,t_address)": {
-            "label": "mapping(uint256 => address)"
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
           },
           "t_mapping(t_uint256,t_mapping(t_bytes_memory_ptr,t_bool))": {
-            "label": "mapping(uint256 => mapping(bytes => bool))"
+            "label": "mapping(uint256 => mapping(bytes => bool))",
+            "numberOfBytes": "32"
           },
           "t_struct(RoleData)34_storage": {
             "label": "struct AccessControlUpgradeable.RoleData",
             "members": [
               {
                 "label": "members",
-                "type": "t_mapping(t_address,t_bool)"
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
               },
               {
                 "label": "adminRole",
-                "type": "t_bytes32"
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
               }
-            ]
+            ],
+            "numberOfBytes": "64"
           },
           "t_uint256": {
-            "label": "uint256"
+            "label": "uint256",
+            "numberOfBytes": "32"
           },
           "t_bytes_storage": {
             "label": "bytes"

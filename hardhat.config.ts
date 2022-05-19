@@ -36,18 +36,26 @@ const config: HardhatUserConfig = {
     ]
   },
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
+    matic: {
+      url: "https://polygon-rpc.com/",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      gas: 20000000, 
+      gasPrice: 300 * 1000000000
     },
+    bsc:{
+      url:"https://bsc-dataseed.binance.org/",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    }
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
     currency: "USD",
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey:  process.env.BSCSCAN_API_KEY, // BSC
+    //apiKey:  process.env.ETHERSCAN_API_KEY, // Polygon
   },
 };
 
