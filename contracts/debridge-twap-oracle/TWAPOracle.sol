@@ -5,21 +5,20 @@ import "hardhat/console.sol";
 import "./BridgeAppBase.sol";
 import "./forkedInterfaces/IDeBridgeGate.sol";
 import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
-// import "@uniswap/v3-core/contracts/libraries/TickMath.sol";
 
 contract TWAPOracle is BridgeAppBase {
 
     using Flags for uint256;
 
-    event SentPrice(IUniswapV3Pool _pool, uint32 _twapDuration, int24 price, uint256 blockNumber);
-    event ReceivedPrice(IUniswapV3Pool _pool, int24 price, uint256 blockNumber);
+    event SentTick(address _pool, uint32 _twapDuration, int24 tick, uint256 blockNumber);
+    event ReceivedTick(address _pool, int24 _tick, uint256 blockNumber);
 
     function initialize(IDeBridgeGate _deBridgeGate) external initializer {
         __BridgeAppBase_init(_deBridgeGate);
     }
 
     function getV3TWAP(
-        IUniswapV3Pool _pool,
+        address _pool,
         uint32 _twapDuration,
         uint256 _chainIdTo,
         address _fallback,
@@ -29,16 +28,16 @@ contract TWAPOracle is BridgeAppBase {
         uint32[] memory secondsAgo = new uint32[](2);
         secondsAgo[0] = _twapDuration;
         secondsAgo[1] = 0;
-        (int56[] memory tickCumulatives, ) = _pool.observe(secondsAgo);
-        int24 price = int24((tickCumulatives[1] - tickCumulatives[0]) / int56(uint56(_twapDuration)));
-        emit SentPrice(_pool, _twapDuration, price, block.number);
+        (int56[] memory tickCumulatives, ) = IUniswapV3Pool(_pool).observe(secondsAgo);
+        int24 tick = int24((tickCumulatives[1] - tickCumulatives[0]) / int56(uint56(_twapDuration)));
+        emit SentTick(_pool, _twapDuration, tick, block.number);
 
         IDeBridgeGate.SubmissionAutoParamsTo memory autoParams;
         autoParams.flags = autoParams.flags.setFlag(Flags.REVERT_IF_EXTERNAL_FAIL, true);
         autoParams.flags = autoParams.flags.setFlag(Flags.PROXY_WITH_SENDER, true);
         autoParams.executionFee = _executionFee;
         autoParams.fallbackAddress = abi.encodePacked(_fallback);
-        autoParams.data = abi.encodeWithSignature("onBridgedMessage(IUniswapV3Pool _pool, int24 _price)", _pool, price);
+        autoParams.data = abi.encodeWithSelector(this.onBridgedMessage.selector, _pool, tick);
 
         address contractAddressTo = chainIdToContractAddress[_chainIdTo];
         if (contractAddressTo == address(0)) {
@@ -58,10 +57,10 @@ contract TWAPOracle is BridgeAppBase {
     }
 
     function onBridgedMessage(
-        IUniswapV3Pool _pool,
-        int24 _price
+        address _pool,
+        int24 _tick
     ) external virtual onlyControllingAddress whenNotPaused returns (int24){
-        emit ReceivedPrice(_pool, _price, block.number);
-        return _price;
+        emit ReceivedTick(_pool, _tick, block.number);
+        return _tick;
     }
 }

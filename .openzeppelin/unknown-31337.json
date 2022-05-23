@@ -2,34 +2,34 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0xd4eb790d48f8d22ee0bd260a9174042740d5e6e514fd87e500f2939ec5ced927"
+    "txHash": "0xa7d24f5d72c36ac3b0cc8f6553dfea9b4ebba265e82a0c7931b09e2d08e801a5"
   },
   "proxies": [
     {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0x292cf3c38c6127e8dee3d8129a73ae2208dfef203243b9be52f3d28e364ca98b",
+      "kind": "transparent"
+    },
+    {
       "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
-      "txHash": "0x129ac9d6e2cf0c99551e4133326c3b12bb490e241896e013ae87044864086cb2",
+      "txHash": "0xbf1ae8b13097533aa80db20d70674277f7a8d24f42bb2c328c27a18e3771e262",
       "kind": "transparent"
     },
     {
       "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
-      "txHash": "0xf8d7af404d1e26c6e400ff1ddc1873c97d3230f50f74eb7e161bc095353b5067",
+      "txHash": "0x602dc5ef95c1a37694512133d7262b86aab962e1973b6fa4737631e018a33375",
       "kind": "transparent"
     },
     {
       "address": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
-      "txHash": "0x29f98aa4298e1049160ba1639b9c465fa018c8cb6a847308ad6314431b4b7984",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0xb89d8c2cc570b216c6f451a7f4450a2b40c37c6d6f1987e3f910f3c4137bcba2",
+      "txHash": "0x387deb0b671fad653ed691241f530b9024f7550b354f7779eb16664df7b3f9e5",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "249f5b3e715c1e652deed073c625d952e0eecd93a5af92c3cdc7af03cd513e22": {
+    "243039d2e8cd1241152062f1e02b0924ac380cb6b871f70a19d12141b502938c": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0xc5bbc5056a748d9c1df3360673040fdb8dbd89f38aaa9c0162016a42bffdba89",
+      "txHash": "0xf5c0024478d499e04cae8a52c1c724e7ac2d01239b4efc23f21d08d48b98d2fd",
       "layout": {
         "storage": [
           {
@@ -100,7 +100,7 @@
             "label": "deBridgeGate",
             "offset": 0,
             "slot": "201",
-            "type": "t_contract(IDeBridgeGate)2460",
+            "type": "t_contract(IDeBridgeGate)2464",
             "contract": "BridgeAppBase",
             "src": "contracts/debridge-twap-oracle/BridgeAppBase.sol:17"
           },
@@ -146,7 +146,7 @@
             "label": "bytes",
             "numberOfBytes": "32"
           },
-          "t_contract(IDeBridgeGate)2460": {
+          "t_contract(IDeBridgeGate)2464": {
             "label": "contract IDeBridgeGate",
             "numberOfBytes": "20"
           },
