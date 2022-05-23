@@ -27,9 +27,9 @@
     }
   ],
   "impls": {
-    "65f95c9e0670111da7df71313163ca9a2991b7fff23b6e15ad26c054abb75e8c": {
+    "243039d2e8cd1241152062f1e02b0924ac380cb6b871f70a19d12141b502938c": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x239b1f8b4f520ab41c9059a81b6efc8e58abfe142d28f48f14d6a22fbeee807e",
+      "txHash": "0xf5c0024478d499e04cae8a52c1c724e7ac2d01239b4efc23f21d08d48b98d2fd",
       "layout": {
         "storage": [
           {
@@ -100,7 +100,7 @@
             "label": "deBridgeGate",
             "offset": 0,
             "slot": "201",
-            "type": "t_contract(IDeBridgeGate)2474",
+            "type": "t_contract(IDeBridgeGate)2464",
             "contract": "BridgeAppBase",
             "src": "contracts/debridge-twap-oracle/BridgeAppBase.sol:17"
           },
@@ -146,7 +146,7 @@
             "label": "bytes",
             "numberOfBytes": "32"
           },
-          "t_contract(IDeBridgeGate)2474": {
+          "t_contract(IDeBridgeGate)2464": {
             "label": "contract IDeBridgeGate",
             "numberOfBytes": "20"
           },

@@ -1,6 +1,6 @@
 const univ3prices = require('@thanpolas/univ3prices');
 
-const tick = 200235
+const tick = 200231
 
 const sqrtRatio = univ3prices.tickMath.getSqrtRatioAtTick(tick);
 
